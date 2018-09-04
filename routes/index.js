@@ -105,7 +105,34 @@ router.get('/kontakt', function (req, res, next) {
 });
 
 router.get('/admin', function (req, res, next) {
-  res.render('pages/admin', { title: 'Administration' })
+  db.query(`SELECT * FROM arrangementer`, function (err,arrangementer){
+    res.render('pages/admin', { title: 'Administration', arrangementer:arrangementer })
+  })
+});
+
+
+
+router.get('/adminNyheder', function (req, res, next) {
+    db.query(`SELECT * FROM nyheder`, function (err, nyheder) {
+    res.render('pages/adminNyheder', { title: 'adminNyheder', nyheder:nyheder })
+   })
+});
+
+router.get('/adminGalleri', function (req, res, next) {
+  db.query(`SELECT * FROM galleri`, function (err, galleri) {
+  res.render('pages/adminGalleri', { title: 'adminGalleri', galleri:galleri })
+   })
+});
+
+router.get('/adminBader', function (req, res, next) {
+  db.query(`SELECT * FROM badpark`, function (err, badpark) {
+    res.render('pages/adminBader', { title: 'adminBader', badpark:badpark })
+  })
+});
+router.get('/adminMedlem', function (req, res, next) {
+  db.query(`SELECT * FROM users`, function (err, users) {
+    res.render('pages/adminMedlem', { title: 'adminMedlem', users:users })
+  })
 });
 
 module.exports = router;

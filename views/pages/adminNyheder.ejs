@@ -67,8 +67,8 @@
       </div>
     </div>
   </div>
-  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Welkomen til Arrangementer</h1>
-  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete Arrangementer</h4>
+  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Velkomen til Nyheder</h1>
+  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete Nyheder</h4>
 
 
   <div class="container">
@@ -76,21 +76,20 @@
     <div id="alert"></div>
     <div class="panel-body col-md-6">
       <ul class="list-group" id="products">
-        <% arrangementer.forEach(function(arrangementer) { %>
+            <% nyheder.forEach(function(nyheder) { %>
 
           <li class="list-group-item product">
             <div class="row">
               <div class="col-sm-12 product_img img-admin-product">
 
-                <img class="img1" src="/images/<%= arrangementer.foto %>" alt="">
                 <h3>
-                  <%= arrangementer.artikel %>
+                  <%= nyheder.artikel %>
                 </h3>
                 <p>
-                  <%= arrangementer.dato %>
+                  <%= nyheder.dato %>
                 </p>
                 <p>
-                  <%= arrangementer.text %>
+                  <%= nyheder.text %>
                 </p>
               </div>
               <div class="col-xs-10 col-md-11">
@@ -107,7 +106,7 @@
                 </div>
                 <div class="product-price">
                   <p class="pricetext">
-                    DKK </p>
+                    </p>
                 </div>
                 <div class="action">
                   <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
@@ -129,19 +128,10 @@
         <fieldset>
 
           <!-- Form Name -->
-          <legend style="color:red;">Rediger Arrangementer</legend>
+          <legend style="color:red;">Rediger Nyheder</legend>
 
 
-          <!-- FOTO input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="url">URL</label>
-            <div class="col-md-6">
-              <input id="url" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
-
-            </div>
-          </div>
-
-          <!-- Text input-->
+         <!-- Text input-->
           <div class="form-group">
             <label class="col-md-6 control-label" for="pris">Artikel</label>
             <div class="col-md-6">
@@ -180,63 +170,58 @@
       </form>
 
     </div>
+
 
     <div class="panel-body col-md-6">
-      <form class="form-horizontal">
-        <fieldset>
-
-          <!-- Form Name -->
-          <legend style="color:red;">Oprete Arrangementer</legend>
-
-
-          <!-- FOTO input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="url">URL</label>
-            <div class="col-md-6">
-              <input id="url" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
-
-            </div>
+            <form class="form-horizontal">
+              <fieldset>
+      
+                <!-- Form Name -->
+                <legend style="color:red;">Oprete Nyheder</legend>
+      
+    
+      
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-6 control-label" for="pris">Artikel</label>
+                  <div class="col-md-6">
+                    <input id="pris" name="pris" placeholder="Artikel:" class="form-control input-md" required="" type="text">
+      
+                  </div>
+                </div>
+      
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-6 control-label" for="farve">Dato</label>
+                  <div class="col-md-6">
+                    <input id="farve" name="farve" placeholder="Dato:" class="form-control input-md" required="" type="text">
+                  </div>
+                </div>
+      
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
+                  <div class="col-md-6">
+                    <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
+                  </div>
+                </div>
+      
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
+                  <div class="col-md-6">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gem</button>
+      
+      
+                  </div>
+                </div>
+      
+              </fieldset>
+            </form>
+      
           </div>
+      
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="pris">Artikel</label>
-            <div class="col-md-6">
-              <input id="pris" name="pris" placeholder="Artikel:" class="form-control input-md" required="" type="text">
-
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="farve">Dato</label>
-            <div class="col-md-6">
-              <input id="farve" name="farve" placeholder="Dato:" class="form-control input-md" required="" type="text">
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
-            <div class="col-md-6">
-              <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
-            </div>
-          </div>
-
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
-            <div class="col-md-6">
-              <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gem</button>
-
-
-            </div>
-          </div>
-
-        </fieldset>
-      </form>
-
-    </div>
 
 
   </div>

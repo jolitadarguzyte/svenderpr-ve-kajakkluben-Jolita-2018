@@ -30,7 +30,7 @@
           <a class="navbar-brand" href="/admin">Arrangementer</a>
           <a class="navbar-brand" href="/adminGalleri"> Galleri</a>
           <a class="navbar-brand" href="/adminNyheder">Nyheder</a>
-          <a class="navbar-brand" href="/adminBader">Både</a>
+          <a class="navbar-brand" href="/adminBåd">Både</a>
           <a class="navbar-brand" href="/adminMedlem"> Medlemmer</a>
           <a class="navbar-brand" href="/kontakt">
             <span class="glyphicon glyphicon-envelope"></span> &nbsp; Beskeder</a>
@@ -63,12 +63,15 @@
 
                   </div>
                 </div>
-        </div>
+              </div>
       </div>
     </div>
   </div>
-  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Welkomen til Arrangementer</h1>
-  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete Arrangementer</h4>
+  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Welkomen til Medlemside </h1>
+  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete Medlemmer</h4>
+  <h4 style="color:green; text-align: center;">Administrators rettiheder svar til tal: 1</h4>
+  <h4 style="color:green; text-align: center;">Instruktørs rettiheder svar til tal: 2</h4>
+  <h4 style="color:green; text-align: center;">Medlems rettiheder svar til tal: 3</h4>
 
 
   <div class="container">
@@ -76,22 +79,27 @@
     <div id="alert"></div>
     <div class="panel-body col-md-6">
       <ul class="list-group" id="products">
-        <% arrangementer.forEach(function(arrangementer) { %>
+        <% users.forEach(function(users) { %>
+          <br>
 
           <li class="list-group-item product">
             <div class="row">
               <div class="col-sm-12 product_img img-admin-product">
 
-                <img class="img1" src="/images/<%= arrangementer.foto %>" alt="">
+                <img class="img6" src="/images/<%= users.foto %>" alt="">
                 <h3>
-                  <%= arrangementer.artikel %>
+                  <%= users.navn %>
                 </h3>
                 <p>
-                  <%= arrangementer.dato %>
+                  <%= users.email %>
                 </p>
                 <p>
-                  <%= arrangementer.text %>
+                  <%= users.password %>
                 </p>
+                <p>
+                  <%= users.rettiheder %>
+                </p>
+
               </div>
               <div class="col-xs-10 col-md-11">
                 <div>
@@ -107,7 +115,7 @@
                 </div>
                 <div class="product-price">
                   <p class="pricetext">
-                    DKK </p>
+                  </p>
                 </div>
                 <div class="action">
                   <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
@@ -129,7 +137,7 @@
         <fieldset>
 
           <!-- Form Name -->
-          <legend style="color:red;">Rediger Arrangementer</legend>
+          <legend style="color:red;">Rediger Medlem</legend>
 
 
           <!-- FOTO input-->
@@ -141,28 +149,38 @@
             </div>
           </div>
 
+
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="pris">Artikel</label>
+            <label class="col-md-6 control-label" for="farve">Navn</label>
             <div class="col-md-6">
-              <input id="pris" name="pris" placeholder="Artikel:" class="form-control input-md" required="" type="text">
+              <input id="farve" name="farve" placeholder="Navn:" class="form-control input-md" required="" type="text">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="pris">Email</label>
+            <div class="col-md-6">
+              <input id="pris" name="pris" placeholder="Email:" class="form-control input-md" required="" type="text">
 
             </div>
           </div>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="farve">Dato</label>
+            <label class="col-md-6 control-label" for="pris">Password</label>
             <div class="col-md-6">
-              <input id="farve" name="farve" placeholder="Dato:" class="form-control input-md" required="" type="text">
+              <input id="pris" name="pris" placeholder="Password:" class="form-control input-md" required="" type="text">
+
             </div>
           </div>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
+            <label class="col-md-6 control-label" for="farve">Rettiheder</label>
             <div class="col-md-6">
-              <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
+              <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
             </div>
           </div>
 
@@ -186,11 +204,11 @@
         <fieldset>
 
           <!-- Form Name -->
-          <legend style="color:red;">Oprete Arrangementer</legend>
+          <legend style="color:red;">Oprete Medlem</legend>
 
 
-          <!-- FOTO input-->
-          <div class="form-group">
+         <!-- FOTO input-->
+         <div class="form-group">
             <label class="col-md-6 control-label" for="url">URL</label>
             <div class="col-md-6">
               <input id="url" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
@@ -198,28 +216,38 @@
             </div>
           </div>
 
+
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="pris">Artikel</label>
+            <label class="col-md-6 control-label" for="farve">Navn</label>
             <div class="col-md-6">
-              <input id="pris" name="pris" placeholder="Artikel:" class="form-control input-md" required="" type="text">
+              <input id="farve" name="farve" placeholder="Navn:" class="form-control input-md" required="" type="text">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="pris">Email</label>
+            <div class="col-md-6">
+              <input id="pris" name="pris" placeholder="Email:" class="form-control input-md" required="" type="text">
 
             </div>
           </div>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="farve">Dato</label>
+            <label class="col-md-6 control-label" for="pris">Password</label>
             <div class="col-md-6">
-              <input id="farve" name="farve" placeholder="Dato:" class="form-control input-md" required="" type="text">
+              <input id="pris" name="pris" placeholder="Password:" class="form-control input-md" required="" type="text">
+
             </div>
           </div>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
+            <label class="col-md-6 control-label" for="farve">Rettiheder</label>
             <div class="col-md-6">
-              <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
+              <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
             </div>
           </div>
 

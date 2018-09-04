@@ -63,12 +63,13 @@
 
                   </div>
                 </div>
-        </div>
+              </div>
       </div>
     </div>
   </div>
-  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Welkomen til Arrangementer</h1>
-  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete Arrangementer</h4>
+  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Velkomen til Galleri</h1>
+  <h4 style="color:rgb(62, 60, 60);  text-align: center;">Her du kan slette,redigere eller oprete bileder</h4>
+
 
 
   <div class="container">
@@ -76,21 +77,21 @@
     <div id="alert"></div>
     <div class="panel-body col-md-6">
       <ul class="list-group" id="products">
-        <% arrangementer.forEach(function(arrangementer) { %>
+        <% galleri.forEach(function(galleri) { %>
 
           <li class="list-group-item product">
             <div class="row">
               <div class="col-sm-12 product_img img-admin-product">
+                <img class="img1" src="/images/<%= galleri.billede %>" alt="">
 
-                <img class="img1" src="/images/<%= arrangementer.foto %>" alt="">
                 <h3>
-                  <%= arrangementer.artikel %>
+
                 </h3>
                 <p>
-                  <%= arrangementer.dato %>
+
                 </p>
                 <p>
-                  <%= arrangementer.text %>
+
                 </p>
               </div>
               <div class="col-xs-10 col-md-11">
@@ -107,7 +108,7 @@
                 </div>
                 <div class="product-price">
                   <p class="pricetext">
-                    DKK </p>
+                  </p>
                 </div>
                 <div class="action">
                   <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
@@ -129,10 +130,8 @@
         <fieldset>
 
           <!-- Form Name -->
-          <legend style="color:red;">Rediger Arrangementer</legend>
-
-
-          <!-- FOTO input-->
+          <legend style="color:red;">Rediger Bileder</legend>
+          <!-- Text input-->
           <div class="form-group">
             <label class="col-md-6 control-label" for="url">URL</label>
             <div class="col-md-6">
@@ -140,6 +139,7 @@
 
             </div>
           </div>
+
 
           <!-- Text input-->
           <div class="form-group">
@@ -158,13 +158,6 @@
             </div>
           </div>
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
-            <div class="col-md-6">
-              <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
-            </div>
-          </div>
 
           <!-- Button -->
           <div class="form-group">
@@ -180,16 +173,17 @@
       </form>
 
     </div>
+
 
     <div class="panel-body col-md-6">
       <form class="form-horizontal">
         <fieldset>
 
           <!-- Form Name -->
-          <legend style="color:red;">Oprete Arrangementer</legend>
+          <legend style="color:red;">Oprete Bileder</legend>
 
 
-          <!-- FOTO input-->
+          <!-- Text input-->
           <div class="form-group">
             <label class="col-md-6 control-label" for="url">URL</label>
             <div class="col-md-6">
@@ -215,13 +209,7 @@
             </div>
           </div>
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
-            <div class="col-md-6">
-              <textarea id="beskrivelse" name="beskrivelse" placeholder="Text:" tabindex="5" required></textarea>
-            </div>
-          </div>
+      
 
           <!-- Button -->
           <div class="form-group">
@@ -237,6 +225,8 @@
       </form>
 
     </div>
+
+
 
 
   </div>
