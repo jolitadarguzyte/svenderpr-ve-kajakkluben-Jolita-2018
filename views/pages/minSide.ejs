@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+  <div id="kontaktBody">
+    <div id="indhold6">
+      <h3 id="titleH3">
+        <%= title %>
+      </h3>
+
+      <div id="indhold5">
+
+        <div id="loginbox" style="margin-top:30px; margin-bottom: 30px;">
+
+
+          <div class="container">
+            <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="panel-title" style="margin-left:6px">Log ind</div>
+                  <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>-->
+                </div>
+
+                <div style="padding-top:5px" color="red" ; class="panel-body">
+                  <% if (typeof message !== "undefined" && message.length > 0) { %>
+                    <div class="alert alert-danger col-sm-12">
+                      <%= message %>
+                    </div>
+                    <% } %>
+
+                      <form id="contact" class="form-horizontal" role="form" method="post" action="/login" onsubmit="return formular(this)">
+
+                        <div style="margin-bottom: 5px" class="input-group">
+                         <input class="kontaktInput" type="text" class="form-control" name="user_name" value="" placeholder="Bruger navn/email">
+                        </div>
+
+                        <div style="margin-bottom: 5px" class="input-group">
+                          <input class="kontaktInput" type="password" class="form-control" name="password" placeholder="password">
+                        </div>
+
+
+
+                        <div class="input-group">
+                          <div class="checkbox">
+                            <label>
+                              <input id="login-remember" type="checkbox" name="remember" value="1" style="margin-left:6px">Husk mig
+                            </label>
+                          </div>
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                          <!-- Button -->
+
+                          <div class="col-sm-12 controls">
+                            <button id="btn-login" type="submit" class="btn btn-success" style="margin-left: 6px; margin-bottom: 5px;">Log
+                              ind </button>
+
+
+                          </div>
+                        </div>
+
+                      </form>
+
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

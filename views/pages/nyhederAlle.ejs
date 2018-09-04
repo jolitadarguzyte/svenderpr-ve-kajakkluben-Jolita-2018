@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+      <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+<div id="indhold">
+    <h3 class="titleH3"><%= title %></h3>
+
+  <% nyheder.forEach(function(nyheder) { %>
+  <div id="indhold3">
+        <h3><%= nyheder.artikel %> </h3>
+        <p><%= nyheder.dato %> </p>
+        <p class="shortText"><%= nyheder.text %> </p>
+        <p><%= nyheder.tlf %> </p>
+      </div>
+      <% }) %>
+</div>
+<br>
+  <footer>
+      <% include ../partials/footer %>
+  </footer>
+  <script src="/javascripts/leasMere.js"></script>
+
+
+</body>
+
+</html>

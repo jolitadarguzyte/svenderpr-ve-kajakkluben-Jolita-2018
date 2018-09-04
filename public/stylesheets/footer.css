@@ -1,0 +1,18 @@
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 35px;
+    width: 100%;
+    align-items: center;
+}
+footer p{
+    color: white;
+    list-style-type: none;
+}
+
+footer div{ 
+    display:flex;
+    justify-content: space-between;
+    width: 620px;
+}

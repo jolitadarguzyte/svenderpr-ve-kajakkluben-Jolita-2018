@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='/stylesheet/admin.css' />
+  <title>Administration</title>
+</head>
+
+<body class="home">
+  <div class="container top-container">
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-bar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/admin"> Admin</a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-bar">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="glyphicon glyphicon-th-list"></span> &nbsp; Produkter
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/udstyrAdmin"> Administrering af udstyr</a>
+                </li>
+                <li>
+                  <a href="/opretprodukt">Opret Produkt</a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="glyphicon glyphicon-th-list"></span> &nbsp; Generel info
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/nyhedAdmin"> Administrering af Nyheder </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+            <li>
+              <a href="/kontakt">
+                <span class="glyphicon glyphicon-envelope"></span> &nbsp; Bestillinger</a>
+            </li>
+          </ul>
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logud
+                <span class="caret"></span>
+              </a>
+              <ul id="nav_login" class="dropdown-menu login-nav-dropdown">
+                <li>
+                  <div class="container-fluid dropdown-header">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8">
+                        <strong>Logoud</strong>
+                      </div>
+                      <div class="col-xs-12 col-md-8">&nbsp;</div>
+                      <div class="col-xs-12">
+                        <a href="logud" name="" class="btn">
+                          <a href="/logout">Log Ud</a>
+                        </a>
+                      </div>
+                      <div class="col-xs-12">
+                        <form class="form-horizontal loginForm">
+                          <fieldset>
+                            &nbsp;
+                          </fieldset>
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 style="color:rgb(62, 60, 60);  text-align: center;">Welkomen til adminisration side</h1>
+  <div class="container">
+
+    <div id="alert"></div>
+    <div class="panel-body col-md-6">
+      <ul class="list-group" id="products">
+          
+          <li class="list-group-item product">
+            <div class="row">
+              <div class="col-sm-12 product_img img-admin-product">
+                <img class="img6" src="" alt="">
+                <p>
+                  
+                </p>
+              </div>
+              <div class="col-xs-10 col-md-11">
+                <div>
+                  <p class="producttitle">
+                    <p class="cykelp"></p>
+                    
+                  </p>
+                </div>
+                <div class="product-description">
+                  <p class="productdescription">
+                    
+                  </p>
+                </div>
+                <div class="product-price">
+                  <p class="pricetext">
+                    DKK </p>
+                  </div>
+                  <div class="action">
+                    <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="#" type="button" class="btn btn-danger btn-xs delete" data-id="" title="Slet">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+      </ul>
+    </div>
+
+    <div class="panel-body col-md-6">
+      <form class="form-horizontal">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>REDIGER CYKLER</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="type">PRODUKT</label>
+            <div class="col-md-6">
+              <input id="type" name="type" placeholder="Navn" class="form-control input-md" required="" type="text">
+
+            </div>
+          </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-6 control-label" for="mærker">MÆRKER</label>
+                <div class="col-md-6">
+                  <input id="mærker" name="mærker" placeholder="Mærker" class="form-control input-md" required="" type="text">
+    
+                </div>
+              </div>
+
+                <!-- Text input-->
+          <div class="form-group">
+              <label class="col-md-6 control-label" for="url">URL</label>
+              <div class="col-md-6">
+                <input id="url" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
+  
+              </div>
+            </div>
+
+              <!-- Text input-->
+          <div class="form-group">
+              <label class="col-md-6 control-label" for="pris">PRIS</label>
+              <div class="col-md-6">
+                <input id="pris" name="pris" placeholder="Angiv pris" class="form-control input-md" required="" type="number">
+  
+              </div>
+            </div>
+
+              <!-- Text input-->
+          <div class="form-group">
+              <label class="col-md-6 control-label" for="farve">FARVE</label>
+              <div class="col-md-6">
+                <input id="farve" name="farve" placeholder="Farve" class="form-control input-md" required="" type="text">
+  
+              </div>
+            </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="beskrivelse">BESKRIVELSE</label>
+            <div class="col-md-6">
+              <input id="beskrivelse" name="beskrivelse" placeholder="Produkt beskrivelse" class="form-control input-md" required="" type="text">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="model">MODEL</label>
+            <div class="col-md-6">
+              <input id="model" name="model" placeholder="Skriv model " class="form-control input-md" required="" type="text">
+
+            </div>
+          </div>
+
+
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
+            <div class="col-md-6">
+              <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gem</button>
+
+
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+
+    </div>
+
+
+  </div>
+  <script src="/javascripts/delete.js"></script>
+  <script src="/javascripts/redigereProdukter.js"></script>
+</body>
+
+</html>

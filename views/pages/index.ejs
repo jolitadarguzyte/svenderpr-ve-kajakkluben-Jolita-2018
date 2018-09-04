@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+  <div id="bodyDiv" style="display:block;">
+    <div id="indholdtest" style>
+      <div id="indholdIndex">
+
+        <div id="omKlubben">
+          <h3 style="margin-left: 10px;">
+            <%= title %>
+          </h3>
+          <p>Velkommen til Kajakklubben Pagaj</p>
+          <p>Klubben blev stiftet i slutningen af 2015 og har lige siden oplevet en stor fremgang i medlemstallet. Vi lægger
+            vægt på, at være en kajakklub for alle. Vi ønsker at skabe en god motionskultur og et godt fællesskab i klubben
+            gennem hyggelige fællesture og sociale arrangementer.<br> <br> KKP ligger i Århus Havn. Går du fra Banegården,
+            tager det cirka 10 minutter til fods at komme til kajakklubben. Århus Havn tilbyder perfekt rovand til begynderinstruktion
+            og almindelige ture eller træning. Der er ingen store bølger i kanalen, hvilket gør det meget begyndervenligt.
+            <br><br>Vi glæder os til at se dig på vandet!</p>
+        </div>
+        <div id="brugtekajaker">
+          <div style="display:block; height:40px;">
+            <h4 style="margin-left: 10px;">Brugte kajakker</h4>
+          </div>
+          <div id="kajak">
+          <% badpark.forEach(function(kajakker) { %>
+            <img id="imgKajak" src="images/<%= kajakker.foto %>" alt="">
+            <!-- <a href="/arrangementer" class="button2">Kalender</a> -->
+            <% }) %>
+
+            <% badpark.forEach(function(kajakker) { %>
+             
+              <a href="/badpark" class="button2"> <p> <%= kajakker.navn  %></p>
+                <p> <%= kajakker.pris %> DKK</p></a>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <div id="stuff">
+
+        <form id="searcBar" style="max-width:300px">
+          <input type="text" id="searchBar" placeholder="Søg på sitet" name="search">
+        </form>
+        <div id="nyheder">
+          <img class="img1" src="images/<%= nyheder[0].foto %>" alt="width=100%">
+
+          <h3>Nyheder</h3>
+          <p>
+            <%= nyheder[0].text.slice(0,19) %>
+              <br>
+              <%= nyheder[1].text.slice(0,28) %>
+          </p>
+          <a href="/nyheder" class="button">Nyheder</a>
+        </div>
+        
+        
+        <div id="stuff1">
+  
+  
+          <div id="nyheder">
+            <img class="img1" src="images/<%= nyheder[1].foto %>" alt="width=100%">
+            <h3> <%= arrangementer[0].dato.slice(9,17) %></h3>
+            <p style="margin-left:10px; margin-top:0;"> <%= arrangementer[0].dato.slice(3,8) %></p>
+            <p>
+              <%= arrangementer[0].text.slice(0,17) %>
+                <br>
+                <%= arrangementer[1].text.slice(0,25) %>
+            </p>
+            <a href="/arrangementer" class="button">Kalender</a>
+          </div>
+  
+  
+        </div>
+      </div>
+
+
+    </div>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+</body>
+
+</html>

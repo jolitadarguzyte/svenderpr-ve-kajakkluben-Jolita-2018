@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+      <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+<div id="indholdGalleri">
+    <h3 class="titleH3"><%= title %></h3>
+  <div id="galleriDiv">
+
+      <% galleri_kategori.forEach(function(element) { %>
+       
+        <img  class="img3" src="/images/<%= element.foto %>" alt="">
+        <% }) %>
+
+  </div>
+</div>
+  <footer>
+      <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+  <div id="kontaktBody">
+    <div id="indhold6">
+      <h3 id="titleH3">
+        <%= title %>
+      </h3>
+      <p id="kontaktP">Sriv til os, hvis du har spørgsmål eller andet på hjerte :)</p>
+
+
+      <div id="indhold5">
+        <div id="kontaktForm">
+          <form id="contact" action="" method="post">
+            <input class="kontaktInput" placeholder="Navn" type="text" tabindex="1" required autofocus>
+            <input class="kontaktInput" placeholder="Email" type="email" tabindex="2" required>
+            <input class="kontaktInput" placeholder="Telefonnummer (valgfrit)" type="tel" tabindex="3" required>
+            <textarea placeholder="Besked:" tabindex="5" required></textarea>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send besked</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2301.3373570549097!2d11.498868115679267!3d54.77403657451538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ad4f635529673d%3A0xf36ed23d8ae76464!2sTorvet+6%2C+4930+Maribo!5e0!3m2!1sda!2sdk!4v1535906052799" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

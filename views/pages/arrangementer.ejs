@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+  <div id="indhold">
+    <h3 class="titleH3">
+      <%= title %>
+    </h3>
+    <% arrangementer.forEach(function(arrangementer) { %>
+
+      <div id="arrangDiv">
+        <img class="img2" src="images/<%= arrangementer.foto %>" alt="width=100%">
+        <h3>
+          <%= arrangementer.artikel %>
+        </h3>
+        <p>
+          <%= arrangementer.dato %>
+        </p>
+        <p class="shortText">
+          <%= arrangementer.text %>
+        </p>
+        <a class="tilmeld "href="/tilmeld">Tilmeld</a>
+      </div>
+      <% }) %>
+
+  </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

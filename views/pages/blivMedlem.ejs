@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+  <div id="indhold">
+
+
+
+    <div id="indhold7">
+      <h3 class="h3Titel">
+        <%= title %>
+      </h3>
+
+      <p id="medlemP">Kunne du tænke dig at blive medlem af Kajakklubben Pagaj, hører vi gerne fra dig. <br> For nærmere
+        detaljer kan du skrive en mail til klubbens formand, Jens på: <a href="">jens@sde.dk </a>eller kontakte os via vores<br>
+        <a href="/kontakt">Kontaktformular</a></p>
+
+      <h4 style="margin-left:10px; margin-bottom: 0px">Priser</h4>
+      <div style="display: flex; margin-bottom: 0px;">
+        <p style="margin-bottom: 0px">Årskontingent gældende fra 1. maj til 1. maj:</p>
+        <p style="margin-bottom: 0px; margin-left:345px;"> 900,- </p>
+      </div>
+      <div style="display: flex;">
+        <p style="margin-top: 0px">Begynderkursus (obligatorisk, hvis ikke anden frigivelse haves):</p>
+        <p style="margin-top: 0px; margin-left:220px;" > 500,- </p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

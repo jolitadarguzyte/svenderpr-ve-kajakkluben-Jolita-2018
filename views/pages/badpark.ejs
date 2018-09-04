@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <header>
+      <% include ../partials/css %>
+      <% include ../partials/header %>
+  </header>
+<div id="indhold">
+    <h3 class="titleH3"><%= title %></h3>
+  <div id="indhold1">
+    <div class="grid">
+      <p>Type:</p>
+      <p>Navn:</p>
+      <p>Sværhedsgrad:</p>
+      <p>Antal:</p>
+      <p>Foto:</p>
+      <p>Til salg:</p>
+     <% badpark.forEach(function(element) { %> 
+      <p><%= element.type %></p>
+      <p><%= element.navn %></p>
+      <p><%= element.sværhedsgrad %></p>
+      <p><%= element.antal %></p> 
+      <img class="img4" src="images/<%= element.foto %>" alt="">
+
+      <p><%= element.pris %></p>
+      <% }) %>
+
+
+
+    </div>
+    
+  </div>
+</div>
+  <footer>
+      <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>
