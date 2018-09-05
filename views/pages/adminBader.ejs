@@ -30,9 +30,9 @@
           <a class="navbar-brand" href="/admin">Arrangementer</a>
           <a class="navbar-brand" href="/adminGalleri"> Galleri</a>
           <a class="navbar-brand" href="/adminNyheder">Nyheder</a>
-          <a class="navbar-brand" href="/adminBåd">Både</a>
+          <a class="navbar-brand" href="/adminBader">Både</a>
           <a class="navbar-brand" href="/adminMedlem"> Medlemmer</a>
-          <a class="navbar-brand" href="/kontakt">
+          <a class="navbar-brand" href="/kontakt">Kontakt</a>
             <span class="glyphicon glyphicon-envelope"></span> &nbsp; Beskeder</a>
 
         </div>
@@ -116,10 +116,10 @@
                     DKK </p>
                 </div>
                 <div class="action">
-                  <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
+                  <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="<%= badpark.id %>" title="Rediger">
                     <span class="glyphicon glyphicon-pencil"></span>
                   </a>
-                  <a href="#" type="button" class="btn btn-danger btn-xs delete" data-id="" title="Slet">
+                  <a href="#" type="button" class="btn btn-danger btn-xs delete" data-id="<%= badpark.id %>" title="Slet">
                     <span class="glyphicon glyphicon-trash"></span>
                   </a>
                 </div>
@@ -131,7 +131,7 @@
     </div>
 
     <div class="panel-body col-md-6">
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="form-redigere">
         <fieldset>
 
           <!-- Form Name -->
@@ -142,7 +142,7 @@
           <div class="form-group">
               <label class="col-md-6 control-label" for="url">URL</label>
               <div class="col-md-6">
-                <input id="url" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
+                <input id="url1" name="url" placeholder="Billede" class="input-file" required="" type="file" value="billede.jpg">
   
               </div>
             </div>
@@ -151,7 +151,7 @@
             <div class="form-group">
               <label class="col-md-6 control-label" for="pris">Type</label>
               <div class="col-md-6">
-                <input id="pris" name="pris" placeholder="Type:" class="form-control input-md" required="" type="text">
+                <input id="type1" name="type" placeholder="Type:" class="form-control input-md" required="" type="text">
   
               </div>
             </div>
@@ -160,7 +160,7 @@
             <div class="form-group">
               <label class="col-md-6 control-label" for="farve">Navn</label>
               <div class="col-md-6">
-                <input id="farve" name="farve" placeholder="Navn:" class="form-control input-md" required="" type="text">
+                <input id="navn1" name="navn" placeholder="Navn:" class="form-control input-md" required="" type="text">
               </div>
             </div>
   
@@ -168,7 +168,7 @@
              <div class="form-group">
                 <label class="col-md-6 control-label" for="farve">Sværhedsgrad</label>
                 <div class="col-md-6">
-                  <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
+                  <input id="sværgrad1" name="sværgrad" placeholder="" class="form-control input-md" required="" type="number">
                 </div>
               </div>
   
@@ -176,7 +176,7 @@
             <div class="form-group">
                 <label class="col-md-6 control-label" for="farve">Antal</label>
                 <div class="col-md-6">
-                  <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
+                  <input id="antal1" name="antal" placeholder="" class="form-control input-md" required="" type="number">
                 </div>
               </div>
               
@@ -184,7 +184,7 @@
             <div class="form-group">
                 <label class="col-md-6 control-label" for="farve">Pris</label>
                 <div class="col-md-6">
-                  <input id="farve" name="farve" placeholder="Pris:" class="form-control input-md" required="" type="text">
+                  <input id="pris1" name="pris" placeholder="Pris:" class="form-control input-md" required="" type="text">
                 </div>
               </div>
   
@@ -192,7 +192,7 @@
             <div class="form-group">
               <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
               <div class="col-md-6">
-                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gem</button>
+                <button id="redigereProdukt" name="redigereProdukt" class="btn btn-primary">Gem</button>
   
   
             </div>
@@ -204,7 +204,7 @@
     </div>
 
     <div class="panel-body col-md-6">
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="form-opret">
         <fieldset>
 
           <!-- Form Name -->
@@ -224,7 +224,7 @@
           <div class="form-group">
             <label class="col-md-6 control-label" for="pris">Type</label>
             <div class="col-md-6">
-              <input id="pris" name="pris" placeholder="Type:" class="form-control input-md" required="" type="text">
+              <input id="type" name="type" placeholder="Type:" class="form-control input-md" required="" type="text">
 
             </div>
           </div>
@@ -233,7 +233,7 @@
           <div class="form-group">
             <label class="col-md-6 control-label" for="farve">Navn</label>
             <div class="col-md-6">
-              <input id="farve" name="farve" placeholder="Navn:" class="form-control input-md" required="" type="text">
+              <input id="navn" name="navn" placeholder="Navn:" class="form-control input-md" required="" type="text">
             </div>
           </div>
 
@@ -241,7 +241,7 @@
            <div class="form-group">
               <label class="col-md-6 control-label" for="farve">Sværhedsgrad</label>
               <div class="col-md-6">
-                <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
+                <input id="sværgrad" name="sværgrad" placeholder="" class="form-control input-md" required="" type="number">
               </div>
             </div>
 
@@ -249,7 +249,7 @@
           <div class="form-group">
               <label class="col-md-6 control-label" for="farve">Antal</label>
               <div class="col-md-6">
-                <input id="farve" name="farve" placeholder="" class="form-control input-md" required="" type="number">
+                <input id="antal" name="antal" placeholder="" class="form-control input-md" required="" type="number">
               </div>
             </div>
             
@@ -257,7 +257,7 @@
           <div class="form-group">
               <label class="col-md-6 control-label" for="farve">Pris</label>
               <div class="col-md-6">
-                <input id="farve" name="farve" placeholder="Pris:" class="form-control input-md" required="" type="text">
+                <input id="pris" name="pris" placeholder="Pris:" class="form-control input-md" required="" type="text">
               </div>
             </div>
 
@@ -265,7 +265,7 @@
           <div class="form-group">
             <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
             <div class="col-md-6">
-              <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gem</button>
+              <button id="opretProdukt" name="opretProdukt" class="btn btn-primary">Gem</button>
 
 
             </div>
@@ -280,6 +280,8 @@
   </div>
   <script src="/javascripts/delete.js"></script>
   <script src="/javascripts/redigereProdukter.js"></script>
+  <script src="/javascripts/opretProdukt.js"></script>
+
 </body>
 
 </html>
